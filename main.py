@@ -13,6 +13,9 @@ class Novel(Book):
         self.numChaps = numChaps
 
 
+def rateBook(self, rating):
+    rating = int(input("Give this book a rating out of 10"))
+
 
 #Create the Novel class that inherits from Book class.
 #Create the Magazine class that inherits from Book class.
