@@ -1,10 +1,12 @@
-#Write Python code for both the Novel and Magazine classes modelled in the previous slide. Include a suitable constructor method which uses the Book constructor method. Instantiate 2 novels and 2 magazines and print their details.
-#Create the Book class (plus methods and attributes)
 class Book:
     def __init__(self, numPages, author, title):
         self.numPages = numPages
         self.author = author
         self.title = title
+
+    def rateBook(self):
+        rating = int(input(f"Give a rating out of 10 for '{self.title}': "))
+        print(f"You rated the book '{self.title}' by {self.author} a {rating}/10.")
 
 class Novel(Book):
     def __init__(self, numPages, author, title, genre, numChaps):
@@ -12,10 +14,15 @@ class Novel(Book):
         self.genre = genre
         self.numChaps = numChaps
 
+    # Use rateBook method for Novels now 
+    def rateBook(self):
+        rating = int(input(f"Give a rating out of 10 for the novel '{self.title}' in the genre '{self.genre}': "))
+        print(f"You rated the novel '{self.title}' a {rating}/10. It has {self.numChaps} chapters.")
+#mainline
+books = [
+    Book(100, "George Orwell", "Politics for Dummies"),
+    Novel(300, "J.K. Rowling", "The Wandering Orphan", "Fantasy", 17)
+    ]
 
-def rateBook(self, rating):
-    rating = int(input("Give this book a rating out of 10"))
-
-
-#Create the Novel class that inherits from Book class.
-#Create the Magazine class that inherits from Book class.
+for b in books:
+    b.rateBook()  # Python will automatically use the right version of rateBook
